@@ -14,6 +14,8 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "@angular-eslint/builder": "^21.0.0",
     "@angular/build": "^21.2.15",
     "@angular/cli": "^21.2.15",
@@ -37,6 +39,8 @@
     "eslint-plugin-playwright": "^2.4.0",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.0",
     "jsdom": "^28.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",
@@ -57,10 +61,13 @@
     "dev": "ng serve",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "commitlint": "commitlint --edit",
+    "coverage": "CI=true ng test --coverage",
     "lint:es": "eslint . --fix",
     "lint:es:check": "eslint .",
     "lint:ts": "ng build --configuration=development && tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.spec.json --noEmit",
     "ng": "ng",
+    "prepare": "husky",
     "start": "node dist/angular-template-ssr/server/server.mjs",
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
