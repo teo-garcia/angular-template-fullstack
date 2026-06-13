@@ -7,5 +7,10 @@
     "outDir": "./out-tsc/spec",
     "types": ["vitest/globals"]
   },
-  "include": ["src/**/*.d.ts", "src/**/*.spec.ts"]
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.spec.ts",
+    "src/vitest.setup.ts",
+    "src/lib/mocks/**/*.ts"
+  ]
 }
