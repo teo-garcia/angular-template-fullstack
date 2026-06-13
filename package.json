@@ -63,6 +63,7 @@
     "format:check": "prettier --check .",
     "commitlint": "commitlint --edit",
     "coverage": "CI=true ng test --coverage",
+    "docker:dev": "docker compose up --build",
     "lint:es": "eslint . --fix",
     "lint:es:check": "eslint .",
     "lint:ts": "ng build --configuration=development && tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.spec.json --noEmit",
