@@ -9,11 +9,20 @@ import {
 import express from 'express'
 
 import { createHealthyHealthResponse } from './lib/health'
+import { securityHeaders } from './lib/security-headers'
 
 const browserDistFolder = join(import.meta.dirname, '../browser')
 
 const app = express()
 const angularApp = new AngularNodeAppEngine()
+
+app.use((_req, res, next) => {
+  for (const header of securityHeaders) {
+    res.setHeader(header.key, header.value)
+  }
+
+  next()
+})
 
 app.get('/api/health', (_req, res) => {
   res.status(200).json(createHealthyHealthResponse())
