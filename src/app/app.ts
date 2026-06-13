@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core'
+import { RouterOutlet } from '@angular/router'
+
+import { ThemeSwitch } from './components/theme-switch/theme-switch'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [RouterOutlet, ThemeSwitch],
 })
-export class App {
-  protected readonly title = signal('angular-template-ssr');
-}
+export class App {}

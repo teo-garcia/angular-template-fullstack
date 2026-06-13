@@ -1,0 +1,12 @@
+<section class="flex h-screen flex-col items-center justify-center gap-y-16">
+  <svg
+    lucideZap
+    class="size-48 text-primary lg:size-56 xl:size-72"
+    aria-hidden="true"
+  ></svg>
+  @if (healthQuery.data(); as health) {
+  <p class="text-sm text-muted-foreground">
+    Health status: {{ health.status }}
+  </p>
+  }
+</section>
