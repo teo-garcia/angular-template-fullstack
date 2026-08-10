@@ -1,10 +1,31 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
-  "extends": "@teo-garcia/tsconfig-shared/angular",
+  "extends": "@teo-garcia/tsconfig-shared/base",
   "compileOnSave": false,
   "compilerOptions": {
-    "module": "preserve"
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "useDefineForClassFields": false,
+    "isolatedModules": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   },
   "files": [],
   "references": [
