@@ -74,7 +74,20 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "setupFiles": ["src/vitest.setup.ts"]
+            "setupFiles": ["src/vitest.setup.ts"],
+            "coverageReporters": ["text", "lcov", "html"],
+            "coverageInclude": ["src/**/*.ts"],
+            "coverageExclude": [
+              "**/*.{test,spec}.ts",
+              "**/*.d.ts",
+              "**/__mocks__/**",
+              "**/lib/test/**",
+              "**/lib/mocks/**",
+              "src/main.ts",
+              "src/main.server.ts",
+              "src/server.ts",
+              "src/vitest.setup.ts"
+            ]
           }
         },
         "lint": {
