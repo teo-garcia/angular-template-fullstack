@@ -3,7 +3,7 @@ import { env } from './env'
 export const siteMetadata = {
   description:
     'Production-ready Angular SSR template with typed routes, theme support, health checks, tests, and Docker defaults.',
-  name: 'Angular Template SSR',
+  name: 'Angular Template Fullstack',
   shortName: 'ATS',
   url: env.publicUrl.replace(/\/$/, ''),
 } as const

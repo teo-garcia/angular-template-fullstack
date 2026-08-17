@@ -60,7 +60,7 @@
     "node": ">=24"
   },
   "license": "MIT",
-  "name": "angular-template-ssr",
+  "name": "angular-template-fullstack",
   "packageManager": "pnpm@11.5.1",
   "private": true,
   "scripts": {
@@ -77,7 +77,7 @@
     "lint:ts": "ng build --configuration=development && tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.spec.json --noEmit",
     "ng": "ng",
     "prepare": "husky",
-    "start": "node dist/angular-template-ssr/server/server.mjs",
+    "start": "node dist/angular-template-fullstack/server/server.mjs",
     "test": "ng test",
     "test:e2e": "playwright test",
     "watch": "ng build --watch --configuration development"

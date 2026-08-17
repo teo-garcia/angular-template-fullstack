@@ -1,6 +1,6 @@
 <div align="center">
 
-# Angular Template SSR
+# Angular Template Fullstack
 
 **Production-ready Angular starter with SSR, TypeScript, Tailwind CSS, and
 modern testing**
