@@ -5,7 +5,7 @@
   "compilerOptions": {
     "noEmit": false,
     "outDir": "./out-tsc/spec",
-    "types": ["vitest/globals"]
+    "types": ["node", "vitest/globals"]
   },
   "include": [
     "src/**/*.d.ts",

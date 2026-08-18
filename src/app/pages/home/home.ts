@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core'
+import { Title } from '@angular/platform-browser'
 import { LucideZap } from '@lucide/angular'
 
-import { HealthService } from '../../services/health.service'
+import { siteMetadata } from '../../../lib/seo'
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,9 @@ import { HealthService } from '../../services/health.service'
   imports: [LucideZap],
 })
 export class Home {
-  private readonly healthService = inject(HealthService)
+  private readonly title = inject(Title)
 
-  protected readonly healthQuery = this.healthService.healthQuery
+  constructor() {
+    this.title.setTitle(`${siteMetadata.shortName} | Home`)
+  }
 }

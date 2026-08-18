@@ -8,7 +8,8 @@ import {
   withEventReplay,
 } from '@angular/platform-browser'
 import { provideRouter } from '@angular/router'
-import { provideAngularQuery } from '@tanstack/angular-query-experimental'
+import { provideTanStackQuery } from '@tanstack/angular-query-experimental'
+import { withDevtools } from '@tanstack/angular-query-experimental/devtools'
 import { QueryClient } from '@tanstack/query-core'
 
 import { routes } from './app.routes'
@@ -19,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
-    provideAngularQuery(
+    provideTanStackQuery(
       new QueryClient({
         defaultOptions: {
           queries: {
@@ -27,7 +28,10 @@ export const appConfig: ApplicationConfig = {
             staleTime: 30_000,
           },
         },
-      })
+      }),
+      withDevtools(() => ({
+        buttonPosition: 'bottom-left',
+      }))
     ),
   ],
 }

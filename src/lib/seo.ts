@@ -4,7 +4,7 @@ export const siteMetadata = {
   description:
     'Production-ready Angular SSR template with typed routes, theme support, health checks, tests, and Docker defaults.',
   name: 'Angular Template Fullstack',
-  shortName: 'ATS',
+  shortName: 'ATF',
   url: env.publicUrl.replace(/\/$/, ''),
 } as const
 

@@ -1,31 +1,20 @@
-<div
-  class="fixed bottom-4 right-4 z-50 flex gap-2 rounded-md border border-border bg-card p-2 shadow-sm"
+<button
+  type="button"
+  class="fixed right-4 top-4 rounded-lg border p-2 transition-colors duration-200 hover:bg-accent hover:text-accent-foreground md:right-8 md:top-8"
+  [attr.aria-label]="'Theme switcher, current mode: ' + preference()"
+  [attr.title]="
+    'Current theme: ' +
+    preference() +
+    '. Click to switch to ' +
+    nextPreference()
+  "
+  (click)="cyclePreference()"
 >
-  <button
-    class="rounded px-2 py-1 text-xs"
-    type="button"
-    [class.bg-primary]="preference() === 'light'"
-    [class.text-primary-foreground]="preference() === 'light'"
-    (click)="setPreference('light')"
-  >
-    Light
-  </button>
-  <button
-    class="rounded px-2 py-1 text-xs"
-    type="button"
-    [class.bg-primary]="preference() === 'dark'"
-    [class.text-primary-foreground]="preference() === 'dark'"
-    (click)="setPreference('dark')"
-  >
-    Dark
-  </button>
-  <button
-    class="rounded px-2 py-1 text-xs"
-    type="button"
-    [class.bg-primary]="preference() === 'system'"
-    [class.text-primary-foreground]="preference() === 'system'"
-    (click)="setPreference('system')"
-  >
-    System
-  </button>
-</div>
+  @switch (preference()) { @case ('light') {
+  <svg lucideSun class="size-5" aria-hidden="true"></svg>
+  } @case ('dark') {
+  <svg lucideMoon class="size-5" aria-hidden="true"></svg>
+  } @default {
+  <svg lucideLaptop class="size-5" aria-hidden="true"></svg>
+  } }
+</button>

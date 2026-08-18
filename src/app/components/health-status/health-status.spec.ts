@@ -1,17 +1,15 @@
 import { provideHttpClient, withFetch } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
-import { provideRouter } from '@angular/router'
 import { provideAngularQuery } from '@tanstack/angular-query-experimental'
 import { QueryClient } from '@tanstack/query-core'
 
-import { App } from './app'
+import { HealthStatus } from './health-status'
 
-describe('App', () => {
+describe('HealthStatus', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [HealthStatus],
       providers: [
-        provideRouter([]),
         provideHttpClient(withFetch()),
         provideAngularQuery(
           new QueryClient({
@@ -22,9 +20,13 @@ describe('App', () => {
     }).compileComponents()
   })
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App)
-    const app = fixture.componentInstance
-    expect(app).toBeTruthy()
+  it('renders the resolved health status', async () => {
+    const fixture = TestBed.createComponent(HealthStatus)
+    fixture.detectChanges()
+
+    await vi.waitFor(() => {
+      fixture.detectChanges()
+      expect(fixture.nativeElement.textContent).toMatch(/OK/i)
+    })
   })
 })
